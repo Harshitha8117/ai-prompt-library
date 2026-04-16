@@ -1,0 +1,8 @@
+<h2>Prompts</h2>
+
+<div *ngFor="let p of prompts">
+  <a [routerLink]="['/prompts', p.id]">
+    <h3>{{ p.title }}</h3>
+  </a>
+  <p>Complexity: {{ p.complexity }}</p>
+</div>

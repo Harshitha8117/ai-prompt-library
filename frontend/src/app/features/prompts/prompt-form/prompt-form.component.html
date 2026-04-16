@@ -1,0 +1,18 @@
+<h2>Create Prompt</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <input placeholder="Title" formControlName="title" />
+  <div *ngIf="form.controls.title.invalid && form.controls.title.touched">
+    Title must be at least 3 chars
+  </div>
+
+  <textarea placeholder="Content" formControlName="content"></textarea>
+  <div *ngIf="form.controls.content.invalid && form.controls.content.touched">
+    Content must be at least 20 chars
+  </div>
+
+  <input type="number" min="1" max="10" formControlName="complexity" />
+
+  <button type="submit">Create</button>
+</form>
